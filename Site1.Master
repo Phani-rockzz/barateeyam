@@ -1,0 +1,370 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="bharateeyam.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+     <style>
+        .topnav{
+             overflow: hidden;
+            
+            opacity:1;
+        }
+        .topnav a{
+             float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display:block;
+        }
+        .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+ 
+}
+
+        .bg-img {
+            background-image:url("bharateeyam header.jpg");
+            min-height: 380px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+       .sticky {
+ position:fixed;
+ top:0;
+ width:100%;
+}
+
+         .container .content {
+             position: absolute;
+             margin: auto;
+             color: white;
+             padding: 20px;
+             text-align: center;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+
+         .contact {
+             position: absolute;
+             bottom: 21%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+
+.timings{
+ position: absolute;
+  bottom: 8px;
+  left: 16px;
+  
+}
+.address{
+ position: absolute;
+  bottom: 8px;
+  right: 16px;
+ 
+}
+.footer{
+    background-color:aqua;
+}
+    </style>
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: black; /* Fallback color */
+  background-color:white; /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+
+
+
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <form id="form1" runat="server">
+         <header>
+            <div class="bg-img" ><div class="container">
+                <div class ="content">  <h1>Bharateeyam</h1><br />
+<h2>food for body and mind restaurant</h2>
+                    </div>
+               
+            <div class="topnav" runat="server" ><div class="sticky">
+                <a 
+                   href="home.aspx">home</a>
+                   <a href="menu.aspx">menu</a>
+                   <a href="gallery.aspx">gallery</a>
+                <a href="comments.aspx">comment</a>
+                 <a href="about.aspx">about</a>
+                <a  href="login.aspx">Login</a>
+               </div>
+
+    
+                <div id="id01" class="modal">
+  
+    <div class="imgcontainer">
+
+
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+      <img src="man_icon.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" id="btnlogin" ></button>
+     
+    </div>
+
+   
+  
+</div>
+
+
+
+
+
+            </div></div>
+
+
+
+
+
+
+
+
+
+                 <script>
+window.onscroll = function() {myFunction()};
+
+                     var topnav = document.getElementById("topnav");
+                    
+                     var sticky = topnav.Offset();
+                    
+
+function myFunction() {
+    if (window.pageYOffset >= sticky)
+    {
+    topnav.classList.add("sticky")
+    } 
+    else
+    {
+    topnav.classList.remove("sticky");
+  }
+}
+</script>
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+</script>
+
+                       
+           </div> </header>
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <footer>
+          <asp:Table runat="server" Width="100%" Height="40%" BackColor="LightGreen" GridLines="Vertical">
+              <asp:TableFooterRow>
+                  <asp:TableCell><h2 style="text-align: center;">timings</h2>
+                      <h4 style="text-align:center;">monday-sunday</h4>
+                      <h4 style="text-align:center;">06:00 AM - 10:00 PM</h4>
+                  </asp:TableCell>
+                  <asp:TableCell><h2 style="text-align:center;">contact</h2><h4 style="text-align:center;">+91 8309325044</h4>
+                      <h4 style="text-align:center;">+91 8309325044</h4>
+                  </asp:TableCell>
+                  <asp:TableCell><h2 style="text-align:center;">address</h2><h4 style="text-align:center;">bharat petrol bunk</h4>
+                      <h4 style="text-align:center;">paritala,paritala</h4>
+                  </asp:TableCell>
+              </asp:TableFooterRow>
+          </asp:Table>
+      </footer>
+
+    </form>
+</body>
+</html>
